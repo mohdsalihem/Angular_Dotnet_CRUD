@@ -1,0 +1,59 @@
+<div class="container mx-auto">
+  <h1 class="my-8 text-xl">Book Summary</h1>
+  <div class="mb-4 flex items-center gap-5">
+    <span>Search Book</span
+    ><input
+      class="w-1/4 rounded border border-gray-400 py-1.5 px-3 focus:border-indigo-400 focus:outline-none"
+      type="text"
+      placeholder="Search Book"
+      #searchBox
+      (input)="searchTerm(searchBox.value)"
+    />
+  </div>
+
+  <div class="overflow-x-auto shadow-md">
+    <table class="w-full text-left text-sm text-gray-500">
+      <thead class="bg-gray-100 text-xs uppercase text-gray-700">
+        <tr>
+          <th scope="col" class="px-6 py-3">Title</th>
+          <th scope="col" class="px-6 py-3">Description</th>
+          <th scope="col" class="px-6 py-3">Author</th>
+          <th scope="col" class="px-6 py-3">Rating</th>
+          <th scope="col" class="px-6 py-3">
+            <span class="sr-only">Edit</span>
+          </th>
+          <th scope="col" class="px-6 py-3">
+            <span class="sr-only">Delete</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books" class="border-b bg-white">
+          <th
+            scope="row"
+            class="whitespace-nowrap px-6 py-4 font-medium text-gray-900"
+          >
+            {{ book.title }}
+          </th>
+          <td class="px-6 py-4">{{ book.description }}</td>
+          <td class="px-6 py-4">{{ book.author }}</td>
+          <td class="px-6 py-4">{{ book.rating }}</td>
+          <td class="px-6 py-4 text-right">
+            <a
+              class="font-medium text-blue-600 hover:underline"
+              (click)="editBook(book.id!)"
+              >Edit</a
+            >
+          </td>
+          <td class="px-6 py-4 text-right">
+            <a
+              class="font-medium text-blue-600 hover:underline"
+              (click)="deleteBook(book.id!)"
+              >Delete</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

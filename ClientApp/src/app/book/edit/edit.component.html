@@ -1,0 +1,48 @@
+<section class="container mx-auto">
+  <h1 class="my-8 text-xl">Edit Book</h1>
+  <form [formGroup]="editBookForm" (ngSubmit)="updateBook()">
+    <label>Title</label>
+    <app-input
+      [control]="title"
+      fieldName="Title"
+      placeholder="Enter Title"
+    ></app-input>
+
+    <label class="mt-3 inline-block">Author</label>
+    <app-input
+      [control]="author"
+      fieldName="Author"
+      placeholder="Enter Author"
+    ></app-input>
+
+    <label class="mt-3 inline-block">Description</label>
+    <app-input
+      [control]="description"
+      fieldName="Description"
+      placeholder="Enter Description"
+    ></app-input>
+
+    <label class="mt-3 inline-block">Rating</label>
+    <app-input
+      [control]="rating"
+      type="number"
+      fieldName="Rating"
+      placeholder="Enter Rating"
+    ></app-input>
+    <div class="flex gap-6">
+      <button
+        type="submit"
+        class="mt-6 rounded-md bg-blue-600 px-6 py-2 text-white hover:bg-blue-700"
+      >
+        Save
+      </button>
+      <button
+        type="button"
+        routerLink="/"
+        class="mt-6 rounded-md bg-gray-500 px-5 py-2 text-white hover:bg-gray-600"
+      >
+        Cancel
+      </button>
+    </div>
+  </form>
+</section>

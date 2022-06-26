@@ -1,0 +1,26 @@
+<section class="container mx-auto">
+  <h1 class="my-8 text-xl">Delete Book</h1>
+
+  <h3 class="mb-2 text-lg font-medium">Are you sure to delete this book ?</h3>
+  <p>
+    Title: <span class="font-semibold">{{ book?.title }}</span>
+  </p>
+  <p>Author: {{ book?.author }}</p>
+  <p>Rating: {{ book?.rating }}</p>
+
+  <div class="flex gap-6">
+    <button
+      type="submit"
+      class="mt-6 rounded-md bg-red-600 px-6 py-2 text-white hover:bg-red-700"
+      (click)="deleteBook(book.id!)"
+    >
+      Delete
+    </button>
+    <button
+      routerLink="/"
+      class="mt-6 rounded-md bg-gray-500 px-5 py-2 text-white hover:bg-gray-600"
+    >
+      Cancel
+    </button>
+  </div>
+</section>

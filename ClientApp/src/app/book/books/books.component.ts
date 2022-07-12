@@ -31,6 +31,7 @@ export class BooksComponent implements OnInit {
   searchTerm(term: string) {
     if (!term) {
       this.books = this.allBooks;
+      return;
     }
 
     this.books = this.allBooks.filter((book) =>
